@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160201193943) do
+ActiveRecord::Schema.define(version: 20160201225347) do
+
+  create_table "goals", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.string   "view_status", null: false
+    t.string   "title",       null: false
+    t.text     "description", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "goals", ["user_id"], name: "index_goals_on_user_id"
 
   create_table "teams", force: :cascade do |t|
     t.datetime "created_at", null: false

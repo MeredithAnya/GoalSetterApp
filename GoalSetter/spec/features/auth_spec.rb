@@ -16,8 +16,8 @@ feature "the signup process" do
       click_on "Create User"
     end
 
-    scenario "redirects to team index page after signup" do
-      expect(page).to have_content "Team Index Page"
+    scenario "redirects to goals index page after signup" do
+      expect(page).to have_content "Goals"
     end
 
     scenario "shows username on the homepage after signup" do

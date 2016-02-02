@@ -1,0 +1,5 @@
+<% @goals.each do |goal| %>
+<%= link_to goal.title, goal_url(goal) %>
+<% end %>
+
+ <%= link_to "New Goal", new_goal_url %>

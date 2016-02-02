@@ -60,12 +60,14 @@ def sign_in(username)
   click_button 'Log In'
 end
 
-def make_link(title = nil, url = nil)
-  title ||= "reddit"
-  url ||= "http://www.reddit.com"
+def make_goal(title = nil, description = nil, view_status )
+  title ||= "Fitness"
+  description ||= "get in shape"
+  view_status ||= "public"
 
-  visit "/links/new"
+  visit "/goals/new"
   fill_in 'Title', with: title
-  fill_in 'URL', with: url
-  click_button "Create New Link"
+  fill_in 'Description', with: description
+  choose('Public')
+  click_button "Create New Goal"
 end

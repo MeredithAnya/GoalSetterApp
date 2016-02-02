@@ -9,7 +9,14 @@
 <body>
 
   <% if current_user %>
+  <p> Logged in as: <%= current_user.username %></p>
   <%= button_to "Log Out", session_url, method: :delete %>
+  <% end %>
+
+  <% if flash[:errors] %>
+  <% flash[:errors].each do |error| %>
+  <%= error %>
+  <% end %>
   <% end %>
 
 <%= yield %>

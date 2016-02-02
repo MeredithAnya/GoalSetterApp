@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
     )
     if @user
       login!(@user)
-      redirect_to teams_url
+      redirect_to goals_url
     else
       render :new
     end
